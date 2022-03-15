@@ -21,8 +21,7 @@ namespace Api_PersonalGeneral.Domain.Entities
         public string Descripcion { get; set; }
         public string Estatus { get; set; }
         public int IdProfesor { get; set; }
-
-        public virtual Profesor IdProfesorNavigation { get; set; }
+        public virtual Profesor Profesor { get; set; }
         public virtual ICollection<Inscripcion> Inscripcions { get; set; }
     }
 }

@@ -28,6 +28,16 @@ namespace Api_PersonalGeneral.Infraestructure.Repositories
 
             return Es.AsQueryable();
         }
+        public bool Exist(Expression<Func<Estudiante, bool>> expression)
+        {
+            return _Econtext.Estudiantes.Any(expression);
+        }
+
+        /*public async Task<Estudiante> Login(string correo, string clave)
+        {
+            var estudiante = await _Econtext.Estudiantes.FirstOrDefaultAsync(e => e.Correo == correo);
+            
+        }*/
         public async Task<int> RegistrarEstudiante(Estudiante estudiante)
         {
             var entity = estudiante;

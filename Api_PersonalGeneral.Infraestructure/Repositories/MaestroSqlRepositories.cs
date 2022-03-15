@@ -29,6 +29,11 @@ namespace Api_PersonalGeneral.Infraestructure.Repositories
             return Mcurso.AsQueryable();
         }
 
+        public bool Exist(Expression<Func<Curso, bool>> expression)
+        {
+            return _Mcontext.Cursos.Any(expression);
+        }
+
         //*El profesor podra registrar cursos
         public async Task<int> RegistrarCurso(Curso curso)
         {

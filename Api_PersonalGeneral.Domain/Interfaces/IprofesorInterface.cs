@@ -12,7 +12,8 @@ namespace Api_PersonalGeneral.Domain.Interfaces
     {
         Task<IQueryable<Profesor>> TodosLosProfesores();
         Task<int> RegistrarProfesor(Profesor profesor);
-
+        public bool Exist(Expression<Func<Profesor, bool>> expression);
+        //Task<Profesor> Login(string correo, string clave);
         void EliminarCuentaProfesor(int id);
     }
 }

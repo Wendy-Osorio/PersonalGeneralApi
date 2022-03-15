@@ -18,6 +18,7 @@ namespace Api_PersonalGeneral.Domain.Entities
         public string Clave { get; set; }
         public string RedesSociales { get; set; }
         public string Descripcion { get; set; }
+        public byte[] claveSalt{get; set;}
 
         public virtual ICollection<Curso> Cursos { get; set; }
     }

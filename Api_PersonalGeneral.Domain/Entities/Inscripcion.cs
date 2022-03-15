@@ -16,7 +16,7 @@ namespace Api_PersonalGeneral.Domain.Entities
         public int IdEstudiante { get; set; }
         public int IdCurso { get; set; }
 
-        public virtual Curso IdCursoNavigation { get; set; }
-        public virtual Estudiante IdEstudianteNavigation { get; set; }
+        public virtual Curso Curso { get; set; }
+        public virtual Estudiante Estudiante { get; set; }
     }
 }

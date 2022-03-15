@@ -16,6 +16,9 @@ namespace Api_PersonalGeneral.Domain.Interfaces
         //*Registrar curso
         Task<int> RegistrarCurso(Curso curso);
 
+        //Busca si existe un curso
+        bool Exist(Expression<Func<Curso, bool>> expression);
+
         //*Buscar curso por Id
         Task<Curso> CursoPorId(int id);
 

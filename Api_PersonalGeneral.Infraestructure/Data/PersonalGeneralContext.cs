@@ -63,7 +63,7 @@ namespace Api_PersonalGeneral.Infraestructure.Data
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.HasOne(d => d.IdProfesorNavigation)
+                entity.HasOne(d => d.Profesor)
                     .WithMany(p => p.Cursos)
                     .HasForeignKey(d => d.IdProfesor)
                     .HasConstraintName("fk_IdProfCurso");
@@ -99,13 +99,13 @@ namespace Api_PersonalGeneral.Infraestructure.Data
 
                 entity.ToTable("Inscripcion");
 
-                entity.HasOne(d => d.IdCursoNavigation)
+                entity.HasOne(d => d.Curso)
                     .WithMany(p => p.Inscripcions)
                     .HasForeignKey(d => d.IdCurso)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_CursoInscripcion");
 
-                entity.HasOne(d => d.IdEstudianteNavigation)
+                entity.HasOne(d => d.Estudiante)
                     .WithMany(p => p.Inscripcions)
                     .HasForeignKey(d => d.IdEstudiante)
                     .OnDelete(DeleteBehavior.ClientSetNull)

@@ -28,6 +28,11 @@ namespace Api_PersonalGeneral.Infraestructure.Repositories
 
             return Prof.AsQueryable();
         }
+        public bool Exist(Expression<Func<Profesor, bool>> expression)
+        {
+            return _Pcontext.Profesors.Any(expression);
+        }
+
         public async Task<int> RegistrarProfesor(Profesor profesor)
         {
             var entity = profesor;
@@ -42,6 +47,11 @@ namespace Api_PersonalGeneral.Infraestructure.Repositories
             
             return entity.IdProfesor;
         }
+        /*public async Task<Profesor> Login(string correo, string clave)
+        {
+            var profesor = await _Pcontext.Profesors.FirstOrDefaultAsync(p => p.Correo == correo);
+
+        }*/
 
         //*Eliminar cuenta 
         public void EliminarCuentaProfesor(int id)
